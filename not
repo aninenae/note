@@ -1,3 +1,0 @@
-L = gg.makeRequest('http://dragoncitytool.rf.gd/',{['Cookie']='__test=a3c250e48c27ea67cfed057f11c46b73'},'$text1').content
-if not L then print('Error: Cookies') else
-pcall(load(L)) end
