@@ -1,7 +1,7 @@
 function Main()
 menu = gg.choice({
 'Dragon City',
-'Monster Legends',
+'Monster Legends'
 },nil, '')
 if menu == 1 then as() end
 if menu == 2 then ae() end
@@ -15,7 +15,7 @@ local data = loadfile(configFile)
 if data ~= nil then
 data = data()
 end
-USER = 'http://dragoncitytool.freecluster.eu/users/user.php'
+USER = 'http://dragoncitytool.freecluster.eu/fixed/connection'
 input = gg.prompt({'Cookies','','user id','','Exit'}, data, {'checkbox','text','checkbox','number','checkbox'})
 if input == nil then end
 if not input then return end
@@ -25,9 +25,9 @@ SE = '{'..input[4]..'}'
 
 if input[1] then
 input[2] = input[2]
-L = gg.makeRequest(USER,nil,USERSAVE).content
+L = gg.makeRequest(SE,{['Cookie']=SA},'1').content
 if not L then gg.alert('SERVER: Allow Internet Connection...') else
-pcall(load(L)) end
+pcall(load(L)) gg.alert('Error: Time Cookies') end
 end
 
 if input[3] then
